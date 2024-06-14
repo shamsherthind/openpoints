@@ -22,7 +22,7 @@ class SEGMENT3DSphere(data.Dataset):
     classes = list(label_to_names.values())
     color_mean = np.array([0.5136457, 0.49523646, 0.44921124])
     color_std = np.array([0.18308958, 0.18415008, 0.19252081])
-    num_classes = 13
+    num_classes = 4
     class2color = {'base':       [0, 255, 0],
                    'pump':       [0, 0, 255],
                    'tank':       [0, 255, 255],

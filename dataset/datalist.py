@@ -22,6 +22,10 @@ class DataList(dataset.Dataset):
             data = np.load(data_path)  # xyzrgbl, N*7
             coord, feat, label = data[:, :3], data[:, 3:6], data[:, 6]
             feat = np.clip(feat / 255., 0, 1).astype(np.float32)
+        elif 'segment3d' in self.dataset_name:
+            data = np.load(data_path)  # xyzrgbl, N*7
+            coord, feat, label = data[:, :3], data[:, 3:6], data[:, 6]
+            feat = np.clip(feat, 0, 1).astype(np.float32)
         elif 'scannet' in self.dataset_name:
             data = torch.load(data_path)  # xyzrgbl, N*7
             if self.split != 'test':
