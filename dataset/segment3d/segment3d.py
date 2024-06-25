@@ -62,12 +62,13 @@ class SEGMENT3D(Dataset):
         self.raw_root = raw_root
         data_list = sorted(os.listdir(raw_root))
         data_list = [item[:-4] for item in data_list if '.npy' in item]
-        if split == 'train':
-            self.data_list = [
-                item for item in data_list if not '{}'.format(test_area) in item]
-        else:
-            self.data_list = [
-                item for item in data_list if '{}'.format(test_area) in item]
+        # if split == 'train':
+        #     self.data_list = [
+        #         item for item in data_list if not '{}'.format(test_area) in item]
+        # else:
+        #     self.data_list = [
+        #         item for item in data_list if '{}'.format(test_area) in item]
+        self.data_list = [ item for item in data_list  ]
 
         processed_root = os.path.join(data_root, 'processed')
         filename = os.path.join(
