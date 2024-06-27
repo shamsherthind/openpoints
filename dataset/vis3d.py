@@ -1,5 +1,7 @@
 import torch 
 import numpy as np
+import laspy
+
 """
 2022@PointNeXt, 
 Color Reference: https://colorbrewer2.org/ 
