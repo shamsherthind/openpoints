@@ -153,6 +153,7 @@ def write_obj(points, colors, out_filename):
 def write_las(points, colors, out_filename):
     
 
+    # las = laspy.create(point_format=3, file_version="1.2")
     las = laspy.create(point_format=3, file_version="1.2")
 
     # Assign XYZ coordinates
@@ -166,8 +167,9 @@ def write_las(points, colors, out_filename):
     las.blue = colors[:, 2]
 
     # Write to a LAS file-
-    with laspy.open(out_filename, mode="w", header=header) as writer:
-        writer.write_points(las.points)
+    # with laspy.open(out_filename, mode="w", header=header) as writer:
+    #     writer.write_points(las.points)
+    las.write(out_filename)
 
 
 def read_obj(filename):
