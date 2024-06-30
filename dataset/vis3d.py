@@ -162,9 +162,9 @@ def write_las(points, colors, out_filename):
     las.z = points[:, 2]
 
     # Assign RGB colors
-    las.red = colors[:, 0]
-    las.green = colors[:, 1]
-    las.blue = colors[:, 2]
+    las.red = colors[:, 0] * 65535.0
+    las.green = colors[:, 1] * 65535.0
+    las.blue = colors[:, 2] * 65535.0
 
     # Write to a LAS file-
     # with laspy.open(out_filename, mode="w", header=header) as writer:
